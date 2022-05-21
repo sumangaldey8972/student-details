@@ -4,7 +4,7 @@ let studentArr = JSON.parse(localStorage.getItem("studentData")) || [];
         this.course = c;
         this.unit = u;
         this.img = i;
-        this.batch = b;
+        this.batch = `FT-web_${b}`;
     }
 
     function submitFun(e) {
@@ -21,7 +21,6 @@ let studentArr = JSON.parse(localStorage.getItem("studentData")) || [];
 
         let student = new submit(name, course, unit, img, batch);
         studentArr.push(student);
-
         localStorage.setItem("studentData", JSON.stringify(studentArr));
 
         document.getElementById("name").value = null;
